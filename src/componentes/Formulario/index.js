@@ -4,7 +4,7 @@ import CampoTexto from '../CampoTexto'
 import ListaSuspensa from '../ListaSuspensa'
 import './formulario.css'
 
-const Formulario = () => {
+const Formulario = (props) => {
 
     const times = [
         'Programação',
@@ -21,8 +21,9 @@ const Formulario = () => {
     const [imagem, setImagem] = useState('')
     const [time, setTime] = useState('')
 
-    const onSave = (event) => {
-        event.preventDefault()
+    const onSave = (evento) => {
+        evento.preventDefault()
+        props.onRegister({nome, cargo, imagem, time})
     }
 
     return (
